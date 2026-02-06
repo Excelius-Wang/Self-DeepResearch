@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Custom Scrollbar - Dark */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-slate-700/50 rounded-full hover:bg-slate-600/80 transition-colors;
+  }
+
+  /* Custom Scrollbar - Light (Default) */
+  .scrollbar-thin-light::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .scrollbar-thin-light::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin-light::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full hover:bg-gray-400 transition-colors;
+  }
+}
+
+/* Base styles */
+body {
+  @apply antialiased text-gray-900 bg-gray-50 transition-colors duration-300;
+}
+
+/* Dark Mode Transitions */
+.dark body {
+  @apply bg-gray-900 text-gray-100;
+}
+
+/* Citation Badge Style */
+.citation-badge {
+  @apply inline-flex items-center gap-1 px-1.5 py-0.5 mx-1 text-xs font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 rounded-md align-middle hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors cursor-default select-none;
+}
+
+/* Animation Utilities */
+.animate-in {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+.fade-in {
+  animation-name: fadeIn;
+}
+
+.slide-in-from-bottom-8 {
+  animation-name: slideInFromBottom8;
+}
+
+.slide-in-from-bottom-4 {
+  animation-name: slideInFromBottom4;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromBottom8 {
+  from { transform: translateY(2rem); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slideInFromBottom4 {
+  from { transform: translateY(1rem); }
+  to { transform: translateY(0); }
+}
+
+/* Print Styles */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #report-content, #report-content * {
+    visibility: visible;
+  }
+  #report-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  /* Hide specific UI elements during print */
+  header, aside, .no-print {
+    display: none !important;
+  }
+}

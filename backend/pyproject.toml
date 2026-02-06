@@ -1,0 +1,19 @@
+[project]
+name = "self-deepresearch"
+version = "0.1.0"
+description = "Automated Deep Research Agent with Reflection"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.100.0",
+    "uvicorn>=0.20.0",
+    "langgraph>=0.0.10",
+    "langchain>=0.1.0",
+    "langchain-openai>=0.0.5",
+    "tavily-python>=0.3.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "httpx>=0.25.0"
+]
+
+[tool.setuptools]
+packages = ["src"]
