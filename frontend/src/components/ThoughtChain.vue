@@ -1,16 +1,14 @@
 <script setup lang="ts">
 import { ref, watch, nextTick } from 'vue'
-import { 
-  Loader2, 
-  BrainCircuit, 
-  Search, 
-  FileText, 
+import {
+  Loader2,
+  BrainCircuit,
+  Search,
+  FileText,
   ListTodo,
   ExternalLink,
   ChevronDown,
-  ChevronUp,
-  Maximize2,
-  Minimize2
+  ChevronUp
 } from 'lucide-vue-next'
 import type { ThoughtStep } from '../types'
 

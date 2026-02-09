@@ -15,3 +15,9 @@ export interface ThoughtStep {
   sources?: Source[]; // Only for Researcher
   timestamp: number;
 }
+
+export interface HistoryItem {
+  id: number;
+  task: string;
+  created_at: string;
+}
