@@ -102,7 +102,7 @@ pip install -e .
 cp .env.example .env
 # 编辑 .env 文件，填入你的 API 密钥
 
-# 启动服务
+# 启动服务（注意：不要加 .py 后缀）
 uvicorn src.main:app --reload --port 8000
 ```
 
