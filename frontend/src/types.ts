@@ -1,5 +1,7 @@
 export type ThoughtType = 'planner' | 'researcher' | 'reviewer' | 'error';
 
+export type ResearchPhase = 'planner' | 'researcher' | 'reviewer' | 'reporter';
+
 export interface Source {
   title: string;
   url: string;
@@ -16,8 +18,16 @@ export interface ThoughtStep {
   timestamp: number;
 }
 
+export interface ResearchProgress {
+  currentLoop: number;
+  maxLoops: number;
+  phase: ResearchPhase;
+  message: string;
+}
+
 export interface HistoryItem {
   id: number;
   task: string;
   created_at: string;
+  notes_count?: number;
 }
